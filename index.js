@@ -1,17 +1,30 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+function hasTargetSum(list, target) {
+  const len = list.length;
+  for (let index1 = 0; index1 < len; index1++) {
+    for (let index2 = 0; index2 < len; index2++) {
+      if (index1 != index2 && (list[index1] + list[index2]) === target) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
-
 /* 
-  Write the Big O time complexity of your function here
+  O(n²)
 */
 
 /* 
-  Add your pseudocode here
+  iterate through the list
+  set index1
+  iterate through the list
+  set index 2
+  if index1 != index2 and list[index1] + list[index2] = target
+      return true
 */
 
 /*
-  Add written explanation of your solution here
+  use a loop to get a number, then another loop to get another number, add the numbers and if they equal to the target, return true  
+  if both loops complete, return false
 */
 
 // You can run `node index.js` to view these console logs
